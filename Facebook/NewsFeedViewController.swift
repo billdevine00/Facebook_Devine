@@ -8,11 +8,13 @@
 
 import UIKit
 
-class NewsFeedViewController: UIViewController {
+class NewsFeedViewController: UIViewController, UIViewControllerTransitioningDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var feedImageView: UIImageView!
-    
+    @IBOutlet weak var weddingImage1: UIImageView!
+    var imageView: UIImageView!
+    var imageViewtoSegue: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,10 +36,25 @@ class NewsFeedViewController: UIViewController {
         scrollView.scrollIndicatorInsets.bottom = 50
     }
     
-    @IBAction func onImageTap(sender: AnyObject) {
+    override func prepareForSegue(PhotoViewSegue: (UIStoryboardSegue!), sender: AnyObject!) {
+        var destinationViewController = PhotoViewSegue.destinationViewController as PhotoViewController
+        
+        destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
+        destinationViewController.transitioningDelegate = self
+        destinationViewController.image = self.imageViewtoSegue.image
+    }
+    
+    @IBAction func onImageTap(gestureRecognizer: UITapGestureRecognizer) {
 
+        imageViewtoSegue = gestureRecognizer.view as UIImageView!
         performSegueWithIdentifier("PhotoViewSegue", sender: nil)
+
+        println(imageView)
+
+        
         
     }
+    
+  
     
 }

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="181-2M-Tzl">
     <dependencies>
-        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
@@ -122,7 +121,6 @@
         <!--Photo View Controller-->
         <scene sceneID="KoP-rh-Mtq">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hDu-cA-Zfy" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Erp-0h-YNG" customClass="PhotoViewController" customModule="Facebook" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lKz-wK-VsW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -132,7 +130,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wedding1" id="oNd-bH-ip7">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="oNd-bH-ip7">
                                         <rect key="frame" x="0.0" y="44" width="320" height="480"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
@@ -155,7 +153,12 @@
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="oNd-bH-ip7" id="NWg-W6-5L9"/>
+                        <outlet property="scrollView" destination="GTm-7n-A4H" id="uzJ-HM-aCb"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hDu-cA-Zfy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1415" y="1436"/>
         </scene>
@@ -226,7 +229,7 @@
                                         </connections>
                                     </imageView>
                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wedding3" id="3vg-1r-pqW">
-                                        <rect key="frame" x="162" y="83" width="154" height="102"/>
+                                        <rect key="frame" x="166" y="83" width="154" height="102"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <gestureRecognizers/>
                                         <connections>
@@ -273,6 +276,7 @@
                     <connections>
                         <outlet property="feedImageView" destination="BFk-jQ-UCW" id="FKQ-21-8kr"/>
                         <outlet property="scrollView" destination="YZ6-vp-O3X" id="Pgj-Be-1bK"/>
+                        <outlet property="weddingImage1" destination="We3-Nn-psC" id="A6N-LB-tlR"/>
                         <segue destination="Erp-0h-YNG" kind="modal" identifier="PhotoViewSegue" id="8qX-hF-ASo"/>
                     </connections>
                 </viewController>
@@ -282,10 +286,26 @@
                         <action selector="onImageTap:" destination="hBK-bb-7vk" id="quf-fn-W7l"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer id="MMG-0o-G4r" userLabel="Wedding 2 Tap Recognizer"/>
-                <tapGestureRecognizer id="pB8-be-Tll" userLabel="Wedding 3 Tap Recognizer"/>
-                <tapGestureRecognizer id="tx8-fI-poc" userLabel="Wedding 4 Tap Recognizer"/>
-                <tapGestureRecognizer id="7rZ-8m-QpX" userLabel="Wedding 5 Tap Recognizer"/>
+                <tapGestureRecognizer id="MMG-0o-G4r" userLabel="Wedding 2 Tap Recognizer">
+                    <connections>
+                        <action selector="onImageTap:" destination="hBK-bb-7vk" id="RiC-H5-eMC"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="pB8-be-Tll" userLabel="Wedding 3 Tap Recognizer">
+                    <connections>
+                        <action selector="onImageTap:" destination="hBK-bb-7vk" id="rNu-1m-hrd"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="tx8-fI-poc" userLabel="Wedding 4 Tap Recognizer">
+                    <connections>
+                        <action selector="onImageTap:" destination="hBK-bb-7vk" id="dhs-Ut-fjW"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="7rZ-8m-QpX" userLabel="Wedding 5 Tap Recognizer">
+                    <connections>
+                        <action selector="onImageTap:" destination="hBK-bb-7vk" id="0T5-BF-b8f"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-942" y="1436"/>
         </scene>
