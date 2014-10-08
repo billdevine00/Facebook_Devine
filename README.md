@@ -2,6 +2,8 @@ Facebook_Devine
 ===============
 Hours Spent: 10
 
+![alt tag](FB_HW.gif)
+
 All items listed below were completed: 
 
 - Tapping on a photo in the news feed should expand the photo full screen.
